@@ -51,7 +51,7 @@ The script will automatically log in to Upwork.com and scrape job details for th
 The get_job_poster.py script is used to scan freelancer reviews in the json files and retrieve the name of the job poster. To use this script run it in the following way:
 
 ```bash
-python get_cleint_name.py
+python get_client_name.py
 ```
 
 ## Contributing
