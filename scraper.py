@@ -54,6 +54,22 @@ def get_data(driver, job_link):
         print("Page loaded by timeout of 10 seconds")
     remove_popup(driver)
     time.sleep(1)
+
+    #     Get the skills
+    try:
+        skills_element_temp = driver.find_element(By.XPATH,"//section[@class='up-card-section']//h4[contains(text(), 'Skills and Expertise')]")
+        skills_element = skills_element_temp.find_element(By.XPATH, "..")
+        skills = skills_element.find_elements(By.TAG_NAME,'a')
+        skill_list = []
+        for skill in skills:
+            skill_list.append(skill.text)
+    #         print(skill.text)
+        expertise = ', '.join(skill_list)
+    except:
+        expertise = 'ERROR'
+        print('error getting skills')
+    time.sleep(1)
+
     try:
         job_title_element = driver.find_element(By.CSS_SELECTOR,'.my-0')
         job_title = job_title_element.text
@@ -90,7 +106,7 @@ def get_data(driver, job_link):
     except:
         review_list = 'NO REVIEWS'
     
-    return job_title,description,review_list
+    return job_title,description,review_list, expertise
 
 def login_with_credentials(driver):
     print("logging in with credentials")
@@ -137,8 +153,9 @@ def main():
     login_with_credentials(driver)
 
     for idx, job_link in enumerate(job_links):
-        title,desc,review = get_data(driver,job_link)
+        title,desc,review,expertise = get_data(driver,job_link)
         output = {"title":title,
+                "expertise":expertise,
                 "desc":str(desc),
                 "review":review}
         # print(output)
