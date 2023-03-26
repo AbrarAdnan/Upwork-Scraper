@@ -4,7 +4,7 @@ Upwork Scraper
 
 # Description
 
-Upwork Scraper is a Python script that allows you to scrape job details from Upwork.com. You can scrape job descriptions, titles, and reviews by providing a list of job links to the script. The script logs in to Upwork.com to access jobs that require authentication, and saves the scraped data to a JSON file.
+Upwork Scraper is a Python script that allows you to scrape job details from Upwork.com. You can scrape job descriptions, titles, skills and experties and reviews by providing a list of job links to the script. The script logs in to Upwork.com to access jobs that require authentication, and saves the scraped data to a JSON file.
 <br>
 Additionally, the project includes a second script that scans the freelancer reviews of a job and retrieves the name of the job poster. The project is a part of a client project and is designed to make job searching on Upwork.com more efficient.
 
