@@ -1,6 +1,4 @@
-# Project Title
-
-Upwork Scraper
+# Upwork Scraper
 
 # Description
 
